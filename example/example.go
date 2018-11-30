@@ -4,11 +4,13 @@ import (
 	"fmt"
 	"math/rand"
 	"time"
+
+	"github.com/junzh0u/multispinner"
 )
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
-	group := NewSpinnerGroup(10)
+	group := multispinner.NewSpinnerGroup(10)
 	group.Start()
 	for i := 0; i < 10; i++ {
 		go func(idx int) {
